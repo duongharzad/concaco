@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  meidai-web:
+    build:
+      context: .
+    command: python3 manage.py runserver 0.0.0.0:8000 --insecure
+    volumes:
+      - ./app/:/code
+    ports:
+      - "80:8000"
+    environment:
+      TZ: 'Asia/Tokyo'
